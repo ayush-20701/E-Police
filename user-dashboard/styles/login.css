@@ -1,0 +1,212 @@
+/* LoginForm.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap");
+
+/* Dark theme colors */
+:root {
+  --bg-dark: #1a1a1a;
+  --bg-container: #2a2a2a;
+  --color-text: #e0e0e0;
+  --color-text-secondary: #a0a0a0;
+  --border-color: #444;
+  --border-color-hover: #666;
+  --input-bg: #333;
+  --button-bg: #444;
+  --button-hover: #555;
+  --button-text: #fff;
+  --link-color: #4dabf7;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.2;
+  background-color: var(--bg-dark);
+  color: var(--color-text);
+  font-family: "Poppins", sans-serif;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: var(--bg-dark);
+}
+
+.container {
+  width: 40rem;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 16px 0px;
+  background-color: var(--bg-container);
+  padding: 0rem 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+header {
+  text-align: center;
+  margin: 1rem 0rem;
+}
+
+header h2 {
+  text-align: center;
+  color: var(--color-text);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+header h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 0.97rem;
+  color: var(--color-text-secondary);
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-heading {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 0 0 0.44rem;
+  line-height: initial;
+  color: var(--color-text);
+}
+
+input {
+  border: 2px solid var(--border-color);
+  width: 100%;
+  color: var(--color-text);
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  height: 2.5rem;
+  background: var(--input-bg);
+  align-items: center;
+  padding: calc(-2px + 0.5rem) calc(-2px + 1rem);
+  font-size: 1rem;
+  outline: none;
+  border-radius: 4px;
+}
+
+input:focus {
+  border: 2px solid var(--link-color);
+}
+
+input:hover {
+  border-color: var(--border-color-hover);
+}
+
+input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.horizontal-divider {
+  font-size: 1.125rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+
+.horizontal-divider::before,
+.horizontal-divider::after {
+  content: "";
+  width: 130px;
+  border-block-start: 2px solid var(--border-color);
+  display: block;
+}
+
+.link-button {
+  align-items: center;
+  display: inline-flex;
+  font-size: inherit;
+  justify-content: center;
+  white-space: nowrap;
+  visibility: visible;
+  height: 1.25rem;
+  overflow: visible;
+  color: var(--link-color);
+  border: none;
+  background: none;
+  text-transform: none;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  font-family: "Poppins", sans-serif;
+  transition: color 0.2s;
+}
+
+.link-button:hover {
+  text-decoration: underline;
+  color: var(--link-color);
+}
+
+.flex-row {
+  display: flex;
+  gap: 10px;
+}
+
+.otp-input-group {
+  flex-grow: 1;
+}
+
+.get-otp-btn {
+  height: 2.5rem;
+  padding: 0 1rem;
+  border: 2px solid var(--border-color);
+  background: var(--button-bg);
+  font-weight: bold;
+  color: var(--link-color);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.get-otp-btn:hover {
+  border-color: var(--border-color-hover);
+  background: var(--button-hover);
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 1.5rem;
+}
+
+.submit button {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 1.5rem;
+  background: var(--button-bg);
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--button-text);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: "Poppins", sans-serif;
+}
+
+.submit button:hover {
+  background: var(--button-hover);
+}
+
+.loginfooter {
+  text-align: center;
+  font-size: 1rem;
+  margin: 1rem 0rem;
+  color: var(--color-text-secondary);
+}
+
+@media only screen and (max-width: 598px) {
+  .container {
+    width: 90%;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #fff;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+.dash{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    justify-content: center;
+    background-image: url('/icons/FIR-Filing.jpg');
+    background-size: cover;        /* ensures image covers the entire div */
+    background-position: center;   /* centres the image */
+    background-repeat: no-repeat; 
+}
+
+.sho_container {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    /* position: relative; */
+    z-index: 1;
+    
+}
+.dash img{
+    width: 15rem;
+	border-radius: 50%;
+}
+.profile{
+    display: flex;
+    justify-content: center;
+    height: 30rem;
+    flex-direction: column;
+    gap: 3rem;
+}
+.username{
+    margin-inline: auto;
+	background: black;
+	padding: 1rem;
+	border-radius: 1rem;
+	width: 13rem;
+	text-align: center;
+    background: #510b2f;
+	font-size: 1.3rem;
+	font-weight: 900;
+}
+.profile img{
+    margin-inline: auto;
+}
+.btn {
+    padding: 1rem;
+    margin: 0 10px;
+}
+
+.insider_btn {
+    padding: 1rem 0;
+    width: 18rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    border-radius: 8px;
+    border: 0;
+    outline: 0;
+    background: linear-gradient(120deg, #000000, #7c0276);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(226, 17, 67, 0.4);
+}
+
+.insider_btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(226, 17, 67, 0.6);
+}
+
+.title {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(120deg, #e21143, #ffbc00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .insider_btn {
+        width: 18rem;
+    }
+}
+
+@media screen and (max-width: 957px) {
+    .sho_container {
+        flex-direction: column;
+    }
+    .insider_btn {
+        width: 20rem;
+    }
+    .btn {
+        margin: 10px 0;
+    }
+}
