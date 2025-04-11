@@ -24,3 +24,12 @@ mongoose.connect(process.env.MONGO_URI, {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   
+app.get('/', (req, res) => {
+  res.send('Hello ')
+})
+app.get('/users', (req, res) => {
+  res.send('users ')
+})
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
