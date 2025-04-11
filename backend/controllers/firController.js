@@ -20,4 +20,16 @@ const createFIR = async (req, res) => {
       res.status(500).json({ message: 'Error submitting FIR' });
     }
   };
-  
+  const FIR = require('../models/FIR'); // Import the FIR model
+
+const getUserFIRs = async (req, res) => {
+    try {
+        const { uid } = req.user; // Extract the UID from the authenticated user
+        const userFIRs = await FIR.find({ aadhaarNumber: uid }); // Find FIRs by UID
+        res.status(200).json(userFIRs); // Return the FIRs as a JSON response
+    } catch (error) {
+        console.error("Error fetching FIRs:", error);
+        res.status(500).json({ message: 'Error fetching FIRs' });
+    }
+};
+  module.exports = { createFIR, getUserFIRs };
