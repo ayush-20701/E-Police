@@ -19,7 +19,6 @@ const Dashboard = () => {
               <button class="insider_btn">Book Appointment</button>
           </div>
       </div>
-      {/* <img src="/icons/FIR-Filing.jpg" alt="" /> */}
     </div>
   )
 }

@@ -32,7 +32,6 @@ const LoginForm = () => {
       <div className="container">
         <header>
           <h2>Sign in</h2>
-          <h3>to your LearningLoom account</h3>
         </header>
         <form onSubmit={handleSubmit}>
           <div className="input-group">

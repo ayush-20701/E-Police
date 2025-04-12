@@ -1,0 +1,35 @@
+.signup{
+    margin: auto;
+	flex-grow: 1;
+	width: 40rem;
+	align-items: center;
+	/* justify-content: center; */
+	justify-content: center;
+	flex-direction: column;
+}
+.signup form{
+    display: flex    ;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 5rem;
+    padding: 2rem;
+    border: 1px solid red;
+    height: 20rem;
+}
+.signup form input{
+    width: 25rem;
+}
+.hd{
+    font-size: xxx-large;
+	font-weight: 800;
+}
+.signup form button{
+    background: wheat;
+	color: black;
+	width: 15rem;
+	margin: auto;
+	height: 3rem;
+	border-radius: 2rem;
+	font-weight: 900;
+	font-size: larger;
+}
