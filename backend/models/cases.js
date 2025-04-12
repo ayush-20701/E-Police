@@ -7,7 +7,6 @@ const casesSchema = new Schema ({
     },
     username:{
         type: String,
-        required: true
     },
     type:{
         type: String,
@@ -25,12 +24,10 @@ const casesSchema = new Schema ({
     },
     phoneNumber: {
         type: String,
-        required: true,
         match: [/^\d{10}$/, 'Phone number must be 10 digits']
     },
     aadhaarNumber: {
         type: String,
-        required: true,
         match: [/^\d{12}$/, 'Aadhaar number must be 12 digits']
     },
     submittedAt: { 

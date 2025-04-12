@@ -21,22 +21,55 @@ export default function FIRForm() {
     setFormData({ ...formData, files: e.target.files });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitStatus('success');
+    const form = new FormData();
+    form.append('username', formData.userName); // or use logged-in user's name if you pass it via props or state
+    form.append('type', formData.firType);
+    form.append('description', formData.description);
+    form.append('location', formData.location);
+    form.append('isAnonymous', false); // or true if you support it
+    form.append('phoneNumber', '0000000000'); // placeholder or input
+    form.append('aadhaarNumber', '000000000000'); // placeholder or input
+    form.append('status', 'Submitted');
 
-    setTimeout(() => {
-      setSubmitStatus(null);
-      setFormData({
-        userName: '',
-        firType: 'General FIR',
-        description: '',
-        location: '',
-        files: []
+    // Append files
+    for (let i = 0; i < formData.files.length; i++) {
+      form.append('evidenceFiles', formData.files[i]);
+    }
+
+    try {
+      const response = await fetch('http://localhost:5000/api/case/addcase', {
+        method: 'POST',
+        headers: {
+          'auth-token': localStorage.getItem('token')
+        },
+        body: form
       });
-      document.getElementById('fileInput').value = '';
-    }, 3000);
+
+      const result = await response.json();
+      if (response.ok) {
+        console.log('Case added:', result);
+        setSubmitStatus('success');
+        setTimeout(() => {
+          setSubmitStatus(null);
+          setFormData({
+            userName: '',
+            firType: 'General FIR',
+            description: '',
+            location: '',
+            files: []
+          });
+          document.getElementById('fileInput').value = '';
+        }, 3000);
+      } else {
+        console.error('Submission failed:', result);
+        alert('Submission failed: ' + (result.errors?.[0]?.msg || result.error));
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Something went wrong. Please try again.');
+    }
   };
 
   return (
@@ -130,7 +163,7 @@ export default function FIRForm() {
         </div>
 
         <div className="submit-button-container">
-          <button type="submit">Submit FIR</button>
+          <button type="submit" onClick={handleSubmit}>Submit FIR</button>
         </div>
       </form>
     </div>

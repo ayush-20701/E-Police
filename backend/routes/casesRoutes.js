@@ -17,15 +17,10 @@ router.get('/fetchallcases', fetchUser, async (req, res) => {
 })
 
 //Add a new case
-router.post('/addcase', fetchUser, [
-    body('description', 'Description must be at least 10 characters!').isLength({min: 10})
-], async (req, res) => {
+router.post('/addcase', fetchUser, async (req, res) => {
     try {
         const {username, type, description, location, evidenceFiles, isAnonymous, phoneNumber, aadhaarNumber, status} = req.body
-        const errors = validationResult(req);
-        if(!errors.isEmpty()) {
-            return res.status(400).json({errors: errors.array()})
-        }
+        
         const casedetail = new Cases({
             user: req.user.id,
             username,

@@ -17,7 +17,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path = '/' element={<HomePage/>}/>
-          <Route path = '/signin' element={<Dashboard/>}/>
+          <Route path = '/dashboard' element={<Dashboard/>}/>
           <Route path = '/signup' element={<Signup/>}/>
           <Route path = '/filefir' element={<FIRForm/>}/>
           <Route path = '/checkstatus' element={<Checkstatus/>}/>
