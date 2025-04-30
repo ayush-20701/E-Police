@@ -7,7 +7,7 @@ const LoginForm = () => {
   const navigate = useNavigate();
   
   const handleSignupClick = () => {
-    navigate('/'); // e.g., navigate('/dashboard')
+    navigate('/signup'); // e.g., navigate('/dashboard')
   };
   const [username, setusername] = useState('');
   const [password, setPassword] = useState('');

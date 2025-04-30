@@ -19,7 +19,7 @@ export default function Signup() {
     const json = await res.json();
     if (res.ok) {
       alert("Signup successful!");
-      navigate('/dashboard');
+      navigate('/');
     } else {
       alert(json.error || "Signup failed.");
     }
